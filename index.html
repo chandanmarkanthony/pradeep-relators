@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pradeep Realtors — Luxury Real Estate Consultants · India &amp; UAE · Hoskote, Bengaluru</title>
+<meta name="description" content="Pradeep Realtors — luxury real estate consultants for India & UAE, based in Hoskote, Bengaluru. Channel partner to trusted builders in Bengaluru and Dubai, with guidance from site visit to registration.">
+<meta name="theme-color" content="#0b1018">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b1018;
+  --ink-2:#0f1622;
+  --line:rgba(214,224,238,.12);
+  --text:#e9eef6;
+  --muted:#96a3b7;
+  --gold:#d8b45a;
+  --gold-2:#e9cf8a;
+  --green:#25D366;
+  --radius:20px;
+  --nav-h:74px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{
+  background:var(--ink);
+  color:var(--text);
+  font-family:'Manrope',system-ui,sans-serif;
+  font-size:16px;line-height:1.65;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--gold);color:#141005}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+
+/* ---------- type ---------- */
+h1,h2,h3,h4,.serif{font-family:'Fraunces',serif;font-weight:400;line-height:1.12;letter-spacing:-.01em}
+.h-xl{font-size:clamp(2.7rem,7.4vw,5.8rem)}
+.h-lg{font-size:clamp(2rem,4.6vw,3.4rem)}
+.lede{color:var(--muted);font-size:clamp(1rem,1.4vw,1.15rem);max-width:38em}
+.kicker{
+  display:inline-flex;align-items:center;gap:.6rem;
+  color:var(--gold);font-weight:600;font-size:.85rem;letter-spacing:.02em;
+  margin-bottom:1.1rem;
+}
+.kicker::before{content:"";width:26px;height:1px;background:var(--gold);display:inline-block}
+.reveal{opacity:0;transform:translateY(30px)}
+.no-anim .reveal{opacity:1;transform:none}
+
+/* ---------- layout ---------- */
+.wrap{width:min(1180px,92vw);margin-inline:auto}
+section{padding:clamp(4.5rem,9vw,8.5rem) 0;position:relative}
+
+/* ---------- nav ---------- */
+nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;height:var(--nav-h);
+  display:flex;align-items:center;
+  transition:background .35s,border-color .35s;
+  border-bottom:1px solid transparent;
+}
+nav.scrolled{background:rgba(11,16,24,.9);backdrop-filter:blur(12px);border-bottom-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;width:min(1180px,92vw);margin-inline:auto}
+.brand{font-family:'Fraunces',serif;font-size:1.3rem;letter-spacing:.01em}
+.brand em{font-style:normal;color:var(--gold)}
+.nav-links{display:flex;gap:1.7rem;align-items:center;font-size:.92rem;font-weight:500;color:var(--muted)}
+.nav-links a{transition:color .25s}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--text)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  padding:.78rem 1.5rem;border-radius:999px;border:1px solid var(--line);
+  font-weight:600;font-size:.93rem;cursor:pointer;background:transparent;color:var(--text);
+  transition:transform .25s,background .25s,border-color .25s,color .25s,box-shadow .25s;
+}
+.btn:hover,.btn:focus-visible{transform:translateY(-2px)}
+.btn.gold{background:linear-gradient(135deg,var(--gold),var(--gold-2));border-color:var(--gold);color:#171204;box-shadow:0 6px 24px rgba(216,180,90,.25)}
+.btn.gold:hover{box-shadow:0 10px 30px rgba(216,180,90,.4)}
+.btn.wa{background:var(--green);border-color:var(--green);color:#052e16;box-shadow:0 6px 24px rgba(37,211,102,.22)}
+.btn.ghost{background:rgba(255,255,255,.04)}
+.btn.ghost:hover{border-color:var(--gold);color:var(--gold)}
+.menu-btn{display:none;background:none;border:0;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+/* ---------- hero ---------- */
+.hero{
+  min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 0 clamp(4rem,8vh,6rem);overflow:hidden;position:relative;
+}
+.hero-media{position:absolute;inset:-12% 0;z-index:-2;will-change:transform}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-shade{position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(180deg,rgba(11,16,24,.72) 0%,rgba(11,16,24,.25) 40%,rgba(11,16,24,.55) 72%,var(--ink) 100%),
+  linear-gradient(90deg,rgba(11,16,24,.65) 0%,rgba(11,16,24,.1) 60%);}
+.hero .kicker{margin-bottom:1.3rem}
+.hero h1{max-width:10.5em;text-shadow:0 2px 30px rgba(0,0,0,.45)}
+.hero .lede{margin:1.6rem 0 2.4rem;color:#c4cddc}
+.hero-cta{display:flex;gap:.9rem;flex-wrap:wrap}
+.hero-cta .btn{width:250px;padding-inline:1rem}
+.contact-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.contact-actions .btn{width:300px;padding:1rem 1rem;font-size:.98rem}
+@media (max-width:560px){
+  .hero-cta .btn,.contact-actions .btn{width:100%}
+}
+.scroll-hint{
+  position:absolute;bottom:2rem;right:4vw;
+  color:#c4cddc;font-size:.75rem;letter-spacing:.18em;
+  display:flex;flex-direction:column;align-items:center;gap:.6rem;
+}
+.scroll-hint::after{content:"";width:1px;height:44px;background:linear-gradient(var(--gold),transparent);animation:drip 2.2s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- marquee ---------- */
+.marquee{border-block:1px solid var(--line);padding:1.3rem 0;overflow:hidden;background:var(--ink-2)}
+.marquee-track{display:flex;gap:3.5rem;width:max-content;animation:slide 48s linear infinite;will-change:transform}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{
+  font-family:'Fraunces',serif;font-size:1.25rem;color:var(--muted);white-space:nowrap;
+  display:inline-flex;align-items:center;gap:3.5rem;
+}
+.marquee-track span i{font-style:normal;color:var(--gold);font-size:.7rem}
+@keyframes slide{to{transform:translate3d(-50%,0,0)}}
+
+/* ---------- statement / about ---------- */
+.statement h2{max-width:24em}
+.statement h2 .w{opacity:.16}
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);margin-top:3.4rem;align-items:center}
+.about-copy .mini{border-top:1px solid var(--line);padding-top:1.4rem;margin-top:1.6rem}
+.about-copy .mini:first-child{margin-top:0}
+.mini h3{font-size:1.15rem;margin-bottom:.5rem}
+.mini p{color:var(--muted);font-size:.98rem}
+.about-photo{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.about-photo::after{content:"";position:absolute;inset:0;border-radius:var(--radius);border:1px solid rgba(233,207,138,.2);pointer-events:none}
+.about-photo img{width:100%;height:100%;min-height:420px;object-fit:cover;transform:scale(1.08);will-change:transform}
+.photo-tag{
+  position:absolute;left:1.1rem;bottom:1.1rem;z-index:2;
+  background:rgba(11,16,24,.72);backdrop-filter:blur(8px);
+  border:1px solid var(--line);border-radius:999px;
+  padding:.45rem 1rem;font-size:.78rem;color:#c4cddc;letter-spacing:.04em;
+}
+
+/* ---------- value cards ---------- */
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:3.4rem}
+.value-card{
+  border:1px solid var(--line);border-radius:var(--radius);padding:1.9rem 1.7rem;
+  background:linear-gradient(170deg,var(--ink-2),var(--ink));
+  transition:border-color .3s,transform .3s;
+}
+.value-card:hover{border-color:rgba(216,180,90,.5);transform:translateY(-4px)}
+.value-card h4{font-size:clamp(1.5rem,2.4vw,2rem);color:var(--gold)}
+.value-card p{color:var(--muted);font-size:.92rem;margin-top:.45rem}
+
+/* ---------- steps (photo cards) ---------- */
+.steps{background:var(--ink-2);border-block:1px solid var(--line)}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:3rem}
+.step{
+  position:relative;border-radius:var(--radius);overflow:hidden;
+  min-height:380px;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:1.6rem 1.4rem;border:1px solid var(--line);
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .45s;
+  background:var(--ink);
+}
+.step:hover{transform:translateY(-8px);border-color:rgba(216,180,90,.5)}
+.step img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.72) saturate(.9);transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.step:hover img{transform:scale(1.07)}
+.step::before{content:"";position:absolute;inset:0;background:rgba(13,18,28,.62);z-index:1}
+.step::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,16,24,.45) 0%,rgba(11,16,24,.65) 45%,rgba(11,16,24,.97) 100%)}
+.step>*{position:relative;z-index:2;text-shadow:0 1px 12px rgba(0,0,0,.6)}
+.step b{font-family:'Fraunces',serif;font-weight:300;font-size:2.2rem;color:var(--gold-2);line-height:1}
+.step h3{font-size:1.3rem;margin:.7rem 0 .45rem}
+.step p{color:#c4cddc;font-size:.9rem}
+.step small{margin-top:.9rem;color:var(--gold);font-weight:700;font-size:.74rem;letter-spacing:.12em}
+
+/* ---------- builders ---------- */
+.builder-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.1rem;margin-top:3rem}
+.builder{
+  border:1px solid var(--line);border-radius:var(--radius);
+  aspect-ratio:8/5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.45rem;
+  background:linear-gradient(160deg,var(--ink-2),var(--ink));
+  transition:border-color .3s,transform .3s,box-shadow .3s;text-align:center;padding:1rem;position:relative;overflow:hidden;
+}
+.builder::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 50% 0%,rgba(216,180,90,.1),transparent);opacity:0;transition:opacity .35s}
+.builder:hover{border-color:rgba(216,180,90,.5);transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.builder:hover::before{opacity:1}
+.builder strong{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.05rem,1.6vw,1.35rem);letter-spacing:.02em;position:relative}
+.builder span{font-size:.72rem;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;position:relative}
+.builder-note{margin-top:1.6rem;color:var(--muted);font-size:.85rem}
+
+/* ---------- parallax band ---------- */
+.band{position:relative;height:clamp(320px,55vh,520px);overflow:hidden;border-block:1px solid var(--line);padding:0;display:flex;align-items:flex-end}
+.band-media{position:absolute;inset:-18% 0;will-change:transform}
+.band-media img{width:100%;height:100%;object-fit:cover}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,16,24,.55),rgba(11,16,24,.25) 50%,rgba(11,16,24,.75))}
+.band .wrap{position:relative;z-index:1;padding-bottom:2.4rem}
+.band p{font-family:'Fraunces',serif;font-size:clamp(1.3rem,2.6vw,2rem);max-width:24em;text-shadow:0 2px 20px rgba(0,0,0,.5)}
+
+/* ---------- calculator ---------- */
+.calc{background:var(--ink)}
+.calc-container{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,4vw,3.5rem);margin-top:3rem;align-items:stretch}
+.calc-inputs{border:1px solid var(--line);border-radius:var(--radius);padding:2rem 1.8rem;background:linear-gradient(170deg,var(--ink-2),var(--ink))}
+.input-group{margin-bottom:1.9rem}
+.input-group:last-child{margin-bottom:0}
+.input-head{display:flex;justify-content:space-between;margin-bottom:.7rem;font-size:.92rem}
+.input-head label{color:var(--muted);font-weight:500}
+.input-head span{color:var(--gold);font-weight:700}
+.input-slider{
+  -webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:999px;
+  background:linear-gradient(90deg,var(--gold) var(--fill,50%),rgba(214,224,238,.15) var(--fill,50%));
+  outline:none;cursor:pointer;
+}
+.input-slider::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-2));
+  border:2px solid #171204;box-shadow:0 2px 12px rgba(216,180,90,.5);
+}
+.input-slider::-moz-range-thumb{
+  width:20px;height:20px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-2));
+  border:2px solid #171204;box-shadow:0 2px 12px rgba(216,180,90,.5);
+}
+.calc-output{
+  border:1px solid rgba(216,180,90,.35);border-radius:var(--radius);padding:2.2rem 2rem;
+  background:radial-gradient(80% 70% at 50% 0%,rgba(216,180,90,.1),transparent),var(--ink-2);
+  display:flex;flex-direction:column;justify-content:center;text-align:center;
+}
+.calc-output .lbl{color:var(--muted);font-size:.9rem}
+.calc-output .emi{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.4rem,4.4vw,3.4rem);color:var(--text);margin:.6rem 0 .3rem}
+.calc-output .rate{color:#34d399;font-size:.85rem}
+.calc-output .btn{margin-top:1.6rem;width:100%}
+.calc-note{margin-top:1.4rem;color:var(--muted);font-size:.8rem;max-width:52em}
+
+/* ---------- advantage ---------- */
+.adv-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:3rem}
+.adv-card{
+  border:1px solid var(--line);border-radius:var(--radius);padding:2rem 1.8rem;
+  background:linear-gradient(170deg,var(--ink-2),var(--ink));transition:border-color .3s,transform .3s;
+}
+.adv-card:hover{border-color:rgba(216,180,90,.5);transform:translateY(-4px)}
+.adv-card i{font-style:normal;font-family:'Fraunces',serif;color:var(--gold);font-size:1.5rem}
+.adv-card h3{font-size:1.4rem;margin:.9rem 0 .5rem}
+.adv-card p{color:var(--muted);font-size:.95rem}
+
+/* ---------- audience ---------- */
+.aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:3rem}
+.aud{border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem 1.6rem;background:var(--ink);transition:border-color .3s,transform .3s}
+.aud:hover{border-color:rgba(216,180,90,.45);transform:translateY(-4px)}
+.aud h3{font-size:1.15rem;margin-bottom:.5rem}
+.aud p{color:var(--muted);font-size:.93rem}
+
+/* ---------- faq ---------- */
+.faq-list{margin-top:2.6rem;border-top:1px solid var(--line)}
+.faq{border-bottom:1px solid var(--line)}
+.faq button{
+  width:100%;background:none;border:0;color:var(--text);cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:1.5rem;
+  padding:1.4rem 0;text-align:left;font-size:1.08rem;font-weight:600;
+  transition:color .25s;
+}
+.faq button:hover{color:var(--gold-2)}
+.faq button .x{color:var(--gold);font-size:1.5rem;font-weight:300;transition:transform .35s;flex-shrink:0;line-height:1}
+.faq.open button .x{transform:rotate(45deg)}
+.faq .a{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.faq .a p{color:var(--muted);padding-bottom:1.4rem;max-width:52em}
+
+/* ---------- contact ---------- */
+.contact{text-align:center;overflow:hidden}
+.contact-bg{position:absolute;inset:0;z-index:-1}
+.contact-bg img{width:100%;height:100%;object-fit:cover;opacity:.22}
+.contact-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--ink) 0%,rgba(11,16,24,.72) 45%,var(--ink) 100%)}
+.contact h2{margin-inline:auto;max-width:14em}
+.contact .lede{margin:1.4rem auto 2.6rem}
+.contact-meta{margin-top:2.6rem;color:var(--muted);font-size:.95rem;display:flex;flex-direction:column;gap:.35rem}
+.contact-meta a{color:var(--text);border-bottom:1px solid var(--line);transition:border-color .25s,color .25s}
+.contact-meta a:hover{color:var(--gold);border-color:var(--gold)}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:2.6rem 0 3rem;background:var(--ink-2)}
+.foot-top{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:center}
+.foot-links{display:flex;gap:1.6rem;color:var(--muted);font-size:.9rem}
+.foot-links a:hover{color:var(--text)}
+.disclaimer{color:var(--muted);font-size:.8rem;margin-top:1.8rem;max-width:62em;line-height:1.7}
+
+/* floating whatsapp */
+.wa-float{
+  position:fixed;right:1.4rem;bottom:1.4rem;z-index:55;
+  width:56px;height:56px;border-radius:50%;background:var(--green);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 30px rgba(37,211,102,.35);
+  transition:transform .25s;
+}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px;fill:#052e16}
+
+/* ---------- mobile ---------- */
+@media (max-width:980px){
+  .steps-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .nav-links{
+    position:fixed;inset:var(--nav-h) 0 auto 0;background:rgba(11,16,24,.97);
+    flex-direction:column;padding:2rem 0 2.4rem;gap:1.5rem;border-bottom:1px solid var(--line);
+    transform:translateY(-130%);transition:transform .4s;
+  }
+  .nav-links.open{transform:translateY(0)}
+  .menu-btn{display:block}
+  .aud-grid{grid-template-columns:1fr 1fr}
+  .builder-grid{grid-template-columns:1fr 1fr}
+  .about-grid,.calc-container,.adv-grid{grid-template-columns:1fr}
+  .about-photo img{min-height:320px}
+  .value-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .steps-grid,.aud-grid{grid-template-columns:1fr}
+  .step{min-height:320px}
+  .scroll-hint{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  .reveal{opacity:1;transform:none}
+  .statement h2 .w{opacity:1}
+}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top">Pradeep <em>Realtors</em></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#approach">The approach</a>
+      <a href="#process">How it works</a>
+      <a href="#builders">Partners</a>
+      <a href="#services">Services</a>
+      <a href="#calculator">EMI calculator</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn gold" href="#contact">Contact us</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-media" data-parallax="18">
+    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2000&q=80" alt="Luxury residence lit at dusk" fetchpriority="high">
+  </div>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="kicker reveal">Luxury real estate consultants · India &amp; UAE</span>
+    <h1 class="h-xl" data-split>The right home, from the right builder, at the right price.</h1>
+    <p class="lede reveal">Pradeep Realtors is a channel-partner firm working directly with trusted developers across Bengaluru and Dubai. You pay the builder, not us — same price, better guidance, from first site visit to registration.</p>
+    <div class="hero-cta reveal">
+      <a class="btn wa" href="https://wa.me/918792349792?text=Hi%20Pradeep%20Realtors%2C%20I%27m%20looking%20for%20a%20property%20in%20Bengaluru." target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn gold" href="tel:+918792349792">Call +91 87923 49792</a>
+      <a class="btn ghost" href="#approach">How we work</a>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</header>
+
+<!-- BUILDER MARQUEE -->
+<div class="marquee" aria-label="Builders we work with">
+  <div class="marquee-track">
+    <span>Prestige Group <i>◆</i></span><span>Godrej Properties <i>◆</i></span><span>Brigade Group <i>◆</i></span><span>Sobha <i>◆</i></span><span>Emaar Dubai <i>◆</i></span><span>DAMAC <i>◆</i></span><span>Aldar <i>◆</i></span><span>Binghatti <i>◆</i></span><span>Ellington Properties <i>◆</i></span><span>BNW Developments <i>◆</i></span>
+    <span>Prestige Group <i>◆</i></span><span>Godrej Properties <i>◆</i></span><span>Brigade Group <i>◆</i></span><span>Sobha <i>◆</i></span><span>Emaar Dubai <i>◆</i></span><span>DAMAC <i>◆</i></span><span>Aldar <i>◆</i></span><span>Binghatti <i>◆</i></span><span>Ellington Properties <i>◆</i></span><span>BNW Developments <i>◆</i></span>
+  </div>
+</div>
+
+<!-- APPROACH / STATEMENT -->
+<section class="statement" id="approach">
+  <div class="wrap">
+    <span class="kicker">The approach</span>
+    <h2 class="h-lg" data-words>Pradeep Realtors holds no inventory and pushes no project. As an authorised channel partner, we study the builder, the location, the price and the paperwork — then show you only what stands up to that check.</h2>
+    <div class="about-grid">
+      <div class="about-copy">
+        <div class="mini reveal">
+          <h3>Zero cost to you</h3>
+          <p>Our fee comes from the builder's marketing budget, never from your pocket. The price you pay through us is the same — often better, with channel-partner launch offers — than walking in directly.</p>
+        </div>
+        <div class="mini reveal">
+          <h3>You own it directly</h3>
+          <p>Every rupee goes from you to the developer, against a registered agreement in your own name. We never collect or hold your money.</p>
+        </div>
+        <div class="mini reveal">
+          <h3>Guidance till the keys</h3>
+          <p>Shortlisting, site visits, price negotiation, home-loan help, agreement review and registration follow-up — one person stays with you across the whole journey.</p>
+        </div>
+      </div>
+      <div class="about-photo reveal">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80" alt="Contemporary residence with clean architecture" loading="lazy" decoding="async" data-inner-parallax>
+        <span class="photo-tag">Homes we believe in — built by names you trust</span>
+      </div>
+    </div>
+
+    <!-- Value promises -->
+    <div class="value-grid">
+      <div class="value-card reveal">
+        <h4>₹0 Brokerage</h4>
+        <p>Zero buyer-side fees. Compensated strictly by developer corporate marketing budgets.</p>
+      </div>
+      <div class="value-card reveal">
+        <h4>100% RERA Verified</h4>
+        <p>Every project we show carries a valid RERA registration, with approvals and title checked before your visit.</p>
+      </div>
+      <div class="value-card reveal">
+        <h4>Exclusive Allocation</h4>
+        <p>Pre-launch access to premium corner units, sky-villas and low floor-rise rates through partner allocations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="steps" id="process">
+  <div class="wrap">
+    <span class="kicker">How it works</span>
+    <h2 class="h-lg" data-split>Four moves, one clear journey.</h2>
+    <div class="steps-grid">
+      <article class="step reveal">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=75" alt="" loading="lazy" decoding="async">
+        <b>01</b>
+        <h3>Understand</h3>
+        <p>One conversation about your budget, purpose, preferred locations and timeline. No pressure, no spam calls.</p>
+        <small>THE BRIEF</small>
+      </article>
+      <article class="step reveal">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=75" alt="" loading="lazy" decoding="async">
+        <b>02</b>
+        <h3>Shortlist</h3>
+        <p>Live projects from trusted builders — RERA status, pricing, construction stage and payment plans compared side by side.</p>
+        <small>THE FILTER</small>
+      </article>
+      <article class="step reveal">
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=75" alt="" loading="lazy" decoding="async">
+        <b>03</b>
+        <h3>Visit &amp; negotiate</h3>
+        <p>Guided site visits at your convenience. We sit on your side of the table for pricing, floor-rise and launch offers.</p>
+        <small>THE DEAL</small>
+      </article>
+      <article class="step reveal">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=75" alt="" loading="lazy" decoding="async">
+        <b>04</b>
+        <h3>Close &amp; register</h3>
+        <p>Booking, home-loan coordination, agreement checks and registration — followed up until the property is in your name.</p>
+        <small>THE KEYS</small>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BUILDERS -->
+<section id="builders">
+  <div class="wrap">
+    <span class="kicker">Premium partners</span>
+    <h2 class="h-lg" data-split>Trusted names across India and the UAE.</h2>
+    <p class="lede" style="margin-top:1.2rem">As an authorised channel partner, we bring you launch-day access and partner pricing across projects from these developers in Bengaluru and Dubai.</p>
+    <div class="builder-grid">
+      <!-- To show an official logo later: paste the logo file the builder gives you into an /assets folder
+           and add  <img src="assets/prestige.png" alt="Prestige Group" style="height:44px;width:auto;position:relative"> 
+           above the <strong> line, then delete the <strong> and <span> lines. -->
+      <div class="builder reveal"><strong>Prestige Group</strong><span>India</span></div>
+      <div class="builder reveal"><strong>Godrej Properties</strong><span>India</span></div>
+      <div class="builder reveal"><strong>Brigade Group</strong><span>India</span></div>
+      <div class="builder reveal"><strong>Sobha</strong><span>India · UAE</span></div>
+      <div class="builder reveal"><strong>Emaar</strong><span>Dubai · UAE</span></div>
+      <div class="builder reveal"><strong>DAMAC</strong><span>Dubai · UAE</span></div>
+      <div class="builder reveal"><strong>Aldar</strong><span>Abu Dhabi · UAE</span></div>
+      <div class="builder reveal"><strong>Binghatti</strong><span>Dubai · UAE</span></div>
+      <div class="builder reveal"><strong>Ellington Properties</strong><span>Dubai · UAE</span></div>
+      <div class="builder reveal"><strong>BNW Developments</strong><span>UAE</span></div>
+    </div>
+    <p class="builder-note">All builder names belong to their respective owners. Project availability changes month to month — ask us for the current list.</p>
+  </div>
+</section>
+
+<!-- PARALLAX BAND -->
+<section class="band">
+  <div class="band-media" data-parallax="22">
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=75" alt="Residential towers rising against the sky" loading="lazy" decoding="async">
+  </div>
+  <div class="wrap">
+    <p>Every tower tells you two things — who built it, and who advised the people inside. We intend to be the second name.</p>
+  </div>
+</section>
+
+<!-- EMI CALCULATOR -->
+<section class="calc" id="calculator">
+  <div class="wrap">
+    <span class="kicker">Financial clarity</span>
+    <h2 class="h-lg" data-split>Plan your EMI before you plan your visit.</h2>
+    <div class="calc-container">
+      <div class="calc-inputs reveal">
+        <div class="input-group">
+          <div class="input-head">
+            <label for="propValInput">Estimated property value</label>
+            <span id="propValLabel">₹ 1.25 Cr</span>
+          </div>
+          <input type="range" min="30" max="500" step="5" value="125" class="input-slider" id="propValInput">
+        </div>
+        <div class="input-group">
+          <div class="input-head">
+            <label for="dpValInput">Down payment</label>
+            <span id="dpValLabel">20%</span>
+          </div>
+          <input type="range" min="10" max="50" step="5" value="20" class="input-slider" id="dpValInput">
+        </div>
+        <div class="input-group">
+          <div class="input-head">
+            <label for="tenureInput">Tenure</label>
+            <span id="tenureLabel">20 years</span>
+          </div>
+          <input type="range" min="5" max="30" step="1" value="20" class="input-slider" id="tenureInput">
+        </div>
+        <div class="input-group">
+          <div class="input-head">
+            <label for="rateInput">Interest rate</label>
+            <span id="rateLabel">8.50%</span>
+          </div>
+          <input type="range" min="7" max="12" step="0.05" value="8.5" class="input-slider" id="rateInput">
+        </div>
+      </div>
+      <div class="calc-output reveal">
+        <span class="lbl">Estimated monthly EMI</span>
+        <div class="emi" id="emiResult">₹ 86,782</div>
+        <span class="rate" id="loanSummary">Down payment: ₹ 25 L · Loan: ₹ 1.00 Cr · 240 months @ 8.50%</span>
+        <a href="https://wa.me/918792349792?text=Hi%2C%20I%20need%20help%20with%20home%20loan%20approval%20and%20the%20best%20bank%20rates." target="_blank" rel="noopener" class="btn gold">Get preferred bank rates</a>
+      </div>
+    </div>
+    <p class="calc-note">Indicative estimate only — actual EMI depends on the bank's approved rate, your credit profile and processing charges. We help you compare offers from multiple banks before you commit.</p>
+  </div>
+</section>
+
+<!-- CHANNEL PARTNER ADVANTAGE -->
+<section class="steps" id="advantage">
+  <div class="wrap">
+    <span class="kicker">Standard of practice</span>
+    <h2 class="h-lg" data-split>The channel partner advantage.</h2>
+    <p class="lede" style="margin-top:1.2rem">Direct sales reps work for developers. We represent you — evaluating structural approvals, RERA compliance records and real transaction comparisons before you commit.</p>
+    <div class="adv-grid">
+      <div class="adv-card reveal">
+        <i>01</i>
+        <h3>Price parity guarantee</h3>
+        <p>You contract directly with the builder on their registered accounts. We tap bulk partner allocations to unlock waived floor-rise charges, early-bird payment schedules and launch offers you won't get walking in alone.</p>
+      </div>
+      <div class="adv-card reveal">
+        <i>02</i>
+        <h3>Full lifecycle support</h3>
+        <p>From the first site evaluation and guided visits to lawyer-backed agreement vetting, loan syndication across banks, and Sub-Registrar stamp duty and registration follow-up — one team, end to end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <span class="kicker">Our services</span>
+    <h2 class="h-lg" data-split>Everything a property journey needs, under one roof.</h2>
+    <div class="aud-grid" style="margin-top:3rem">
+      <div class="aud reveal"><h3>Property buying &amp; selling</h3><p>Residential and commercial — sourced, negotiated and closed with you at every step.</p></div>
+      <div class="aud reveal"><h3>International property guidance</h3><p>Dubai and UAE opportunities from Emaar, DAMAC, Aldar and more, explained in clear terms for Indian buyers.</p></div>
+      <div class="aud reveal"><h3>Investment advisory</h3><p>Entry timing, launch pricing and honest talk about rental yield and resale before you commit.</p></div>
+      <div class="aud reveal"><h3>Financial assistance &amp; loan guidance</h3><p>Home-loan support across banks — eligibility, best rates and paperwork handled with you.</p></div>
+      <div class="aud reveal"><h3>Legal &amp; paperwork support</h3><p>Agreement vetting, title checks, stamp duty and Sub-Registrar registration follow-up.</p></div>
+      <div class="aud reveal"><h3>NRI property consultation</h3><p>Video site visits, document verification and end-to-end assistance while you stay abroad.</p></div>
+      <div class="aud reveal"><h3>Property management</h3><p>Tenant sourcing, agreements and upkeep looked after once the keys are yours.</p></div>
+      <div class="aud reveal"><h3>End-to-end property assistance</h3><p>From the first shortlist to handover — one team responsible for the whole journey.</p></div>
+      <div class="aud reveal"><h3>Residential &amp; commercial</h3><p>Apartments, villas, plots, offices and retail — matched to your budget and purpose.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section id="audience">
+  <div class="wrap">
+    <span class="kicker">Who this is for</span>
+    <h2 class="h-lg" data-split>Buyers who want to be advised, not sold to.</h2>
+    <div class="aud-grid">
+      <div class="aud reveal"><h3>First-time buyers</h3><p>You have one budget and one shot at getting it right. We compare projects you'd never find on your own and keep the pressure off.</p></div>
+      <div class="aud reveal"><h3>NRIs buying remotely</h3><p>Video site-visits, document checks and registration follow-up handled on the ground while you stay informed on WhatsApp.</p></div>
+      <div class="aud reveal"><h3>Investors</h3><p>Entry at launch pricing, construction-linked payment plans, and honest talk about rental yield and resale timelines.</p></div>
+      <div class="aud reveal"><h3>Plot buyers</h3><p>Clear-title plotted developments along the Hoskote and Old Madras Road corridor from reputed developers only.</p></div>
+      <div class="aud reveal"><h3>Upgraders</h3><p>Moving from a 2BHK to a 3BHK or a villa — we time your new booking against your sale so nothing is rushed.</p></div>
+      <div class="aud reveal"><h3>Budget-conscious families</h3><p>Affordable and mid-segment projects from trusted names — because a careful budget deserves a careful builder.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="steps" style="border-top:0">
+  <div class="wrap">
+    <span class="kicker">FAQ</span>
+    <h2 class="h-lg" data-split>Straight answers.</h2>
+    <div class="faq-list">
+      <div class="faq">
+        <button aria-expanded="false">What is a channel partner?<span class="x">+</span></button>
+        <div class="a"><p>A channel partner is a firm authorised by developers to market their projects. We are paid by the builder, not by you — so you get the builder's official price (often with launch offers), plus independent guidance the builder's own sales desk won't give you.</p></div>
+      </div>
+      <div class="faq">
+        <button aria-expanded="false">Do I pay Pradeep Realtors anything?<span class="x">+</span></button>
+        <div class="a"><p>No. Our advisory costs you nothing. Every payment you make goes directly to the developer against a registered agreement in your name. We never collect or hold your money.</p></div>
+      </div>
+      <div class="faq">
+        <button aria-expanded="false">Will I get a better price coming through you?<span class="x">+</span></button>
+        <div class="a"><p>You will never pay more than the builder's direct price. In most launches, channel partners get early inventory access and negotiable offers on floor-rise, premium units and payment plans — we push for every one of them on your behalf.</p></div>
+      </div>
+      <div class="faq">
+        <button aria-expanded="false">Which areas do you cover?<span class="x">+</span></button>
+        <div class="a"><p>We focus on East Bengaluru — Hoskote, Old Madras Road, Whitefield, Budigere Cross, Sarjapur and Varthur — and work select launches across the rest of the city through our builder network.</p></div>
+      </div>
+      <div class="faq">
+        <button aria-expanded="false">Do you help with home loans and registration?<span class="x">+</span></button>
+        <div class="a"><p>Yes. We connect you with bank relationship managers for the best rates, help you read the agreement before you sign, and follow up until registration and handover are complete.</p></div>
+      </div>
+      <div class="faq">
+        <button aria-expanded="false">I live abroad. Can you still help?<span class="x">+</span></button>
+        <div class="a"><p>Absolutely. A large share of our buyers are NRIs. We run video walkthroughs, share verified documents, coordinate with your POA holder, and keep everything updated over WhatsApp in your time zone.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-bg" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1800&q=70" alt="" loading="lazy" decoding="async">
+  </div>
+  <div class="wrap">
+    <span class="kicker" style="justify-content:center">Get in touch</span>
+    <h2 class="h-lg" data-split>Contact us — we reply the same day.</h2>
+    <p class="lede">No forms on this site, because we'd rather talk. Message us on WhatsApp, call, or write an email.</p>
+    <div class="contact-actions">
+      <a class="btn wa" href="https://wa.me/918792349792?text=Hi%20Pradeep%20Realtors%2C%20I%27m%20looking%20for%20a%20property%20in%20Bengaluru." target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.1-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.5 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
+        WhatsApp: +91 87923 49792
+      </a>
+      <a class="btn gold" href="tel:+918792349792">Call +91 87923 49792</a>
+      <a class="btn ghost" href="mailto:sandeeplgowda496@gmail.com">Email us</a>
+    </div>
+    <div class="contact-meta">
+      <span>Sandeep Gowda · Founder &amp; CEO</span>
+      <span>Pradeep Realtors · AMK Complex, Upparahalli, Hoskote, North East Bengaluru, Karnataka 562114</span>
+      <span><a href="tel:+918792349792">+91 87923 49792</a> · <a href="tel:+919632218925">+91 96322 18925</a></span>
+      <span><a href="mailto:sandeeplgowda496@gmail.com">sandeeplgowda496@gmail.com</a></span>
+      <span>Open all days · 9:30 AM – 7:30 PM</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <span class="brand">Pradeep <em>Realtors</em></span>
+      <div class="foot-links">
+        <a href="#approach">The approach</a>
+        <a href="#services">Services</a>
+        <a href="#calculator">EMI calculator</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <p class="disclaimer">Pradeep Realtors is an independent real-estate channel-partner firm. We market projects on behalf of their respective developers; all bookings, agreements and payments are made directly between the buyer and the developer. Builder names and project marks belong to their respective owners. Photographs are representative imagery, not images of specific projects; prices shown are indicative and change without notice. EMI figures are estimates, not loan offers. Nothing on this site is investment advice or a guarantee of returns — please verify RERA registration and project details before booking. © 2026 Pradeep Realtors · Hoskote, Bengaluru, Karnataka.</p>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a class="wa-float" href="https://wa.me/918792349792" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.1-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.5 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+<script>
+/* ---------- EMI calculator ---------- */
+function updateCalculator(){
+  const propValLakhs = parseFloat(document.getElementById('propValInput').value);
+  const dpPercent    = parseFloat(document.getElementById('dpValInput').value);
+  const tenureYears  = parseFloat(document.getElementById('tenureInput').value);
+  const annualRate   = parseFloat(document.getElementById('rateInput').value);
+
+  document.getElementById('propValLabel').innerText = propValLakhs >= 100
+    ? `₹ ${(propValLakhs/100).toFixed(2)} Cr` : `₹ ${propValLakhs} L`;
+  document.getElementById('dpValLabel').innerText = `${dpPercent}%`;
+  document.getElementById('tenureLabel').innerText = `${tenureYears} years`;
+  document.getElementById('rateLabel').innerText = `${annualRate.toFixed(2)}%`;
+
+  const loan = (propValLakhs*100000) * (1 - dpPercent/100);
+  const r = annualRate/12/100;
+  const n = tenureYears*12;
+  const emi = (loan*r*Math.pow(1+r,n)) / (Math.pow(1+r,n)-1);
+
+  document.getElementById('emiResult').innerText = `₹ ${Math.round(emi).toLocaleString('en-IN')}`;
+  const fmt = v => v >= 1e7 ? `₹ ${(v/1e7).toFixed(2)} Cr` : `₹ ${(v/1e5).toFixed(0)} L`;
+  const dpAmount = (propValLakhs*100000) * (dpPercent/100);
+  document.getElementById('loanSummary').innerText =
+    `Down payment: ${fmt(dpAmount)} · Loan: ${fmt(loan)} · ${n} months @ ${annualRate.toFixed(2)}%`;
+
+  /* slider fill */
+  [['propValInput',30,500],['dpValInput',10,50],['tenureInput',5,30],['rateInput',7,12]].forEach(([id,min,max])=>{
+    const el=document.getElementById(id);
+    el.style.setProperty('--fill', ((el.value-min)/(max-min)*100)+'%');
+  });
+}
+['propValInput','dpValInput','tenureInput','rateInput'].forEach(id=>{
+  document.getElementById(id).addEventListener('input', updateCalculator);
+});
+updateCalculator();
+
+(function(){
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- nav ---------- */
+  const nav = document.getElementById('nav');
+  const onScroll = ()=> nav.classList.toggle('scrolled', (window.scrollY||0) > 30);
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  const menuBtn = document.getElementById('menuBtn'), links = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', ()=> links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+  /* ---------- faq ---------- */
+  document.querySelectorAll('.faq').forEach(f=>{
+    const btn=f.querySelector('button'), a=f.querySelector('.a');
+    btn.addEventListener('click',()=>{
+      const open=f.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+      a.style.maxHeight = open ? a.scrollHeight+'px' : 0;
+    });
+  });
+
+  if (reduced || !window.gsap){
+    document.documentElement.classList.add('no-anim');
+    document.querySelectorAll('.reveal').forEach(el=>{el.style.opacity=1;el.style.transform='none';});
+    return;
+  }
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.config({force3D:true});
+
+  /* ---------- buttery smooth scroll (Lenis) ---------- */
+  let lenis=null;
+  if (window.Lenis){
+    lenis = new Lenis({ lerp:0.06, wheelMultiplier:0.9, smoothTouch:false });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time)=>{ lenis.raf(time*1000); });
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1 && document.querySelector(id)){
+          e.preventDefault();
+          lenis.scrollTo(id,{offset:-70,duration:1.9});
+        }
+      });
+    });
+  } else {
+    document.documentElement.style.scrollBehavior='smooth';
+  }
+
+  /* ---------- split headline reveals ---------- */
+  document.querySelectorAll('[data-split]').forEach(h=>{
+    const words = h.textContent.trim().split(/\s+/);
+    h.textContent='';
+    words.forEach(w=>{
+      const s=document.createElement('span');
+      s.textContent=w+'\u00A0';
+      s.style.display='inline-block';
+      s.style.willChange='transform,opacity';
+      h.appendChild(s);
+    });
+    gsap.fromTo(h.children,
+      {yPercent:110, opacity:0},
+      {yPercent:0, opacity:1, duration:1.7, ease:'power3.out', stagger:0.055,
+       scrollTrigger:{trigger:h, start:'top 88%', once:true},
+       onComplete:()=>{ [...h.children].forEach(c=>c.style.willChange='auto'); }});
+  });
+
+  /* ---------- word-by-word statement (scrub) ---------- */
+  document.querySelectorAll('[data-words]').forEach(h=>{
+    const words=h.textContent.trim().split(/\s+/);
+    h.innerHTML=words.map(w=>`<span class="w">${w}</span>`).join(' ');
+    gsap.to(h.querySelectorAll('.w'),{
+      opacity:1, stagger:0.03, ease:'none',
+      scrollTrigger:{trigger:h, start:'top 82%', end:'bottom 55%', scrub:1}
+    });
+  });
+
+  /* ---------- batched reveals ---------- */
+  ScrollTrigger.batch('.reveal',{
+    start:'top 90%', once:true,
+    onEnter:batch=>gsap.to(batch,{opacity:1,y:0,duration:1.4,ease:'power2.out',stagger:.15,overwrite:true})
+  });
+
+  /* ---------- parallax media ---------- */
+  document.querySelectorAll('[data-parallax]').forEach(el=>{
+    const depth=+el.dataset.parallax||15;
+    gsap.fromTo(el,{yPercent:-depth/2},{yPercent:depth/2,ease:'none',
+      scrollTrigger:{trigger:el.parentElement,start:'top bottom',end:'bottom top',scrub:0.9}});
+  });
+  document.querySelectorAll('[data-inner-parallax]').forEach(img=>{
+    gsap.fromTo(img,{yPercent:-6},{yPercent:6,ease:'none',
+      scrollTrigger:{trigger:img,start:'top bottom',end:'bottom top',scrub:0.9}});
+  });
+
+  /* ---------- hero entrance ---------- */
+  gsap.timeline()
+    .from('.brand',{y:-14,opacity:0,duration:1,ease:'power2.out'})
+    .from('.nav-links > *',{y:-12,opacity:0,stagger:.09,duration:.8,ease:'power2.out'},'-=.6')
+    .from('.hero-media img',{scale:1.12,duration:3.4,ease:'power2.out'},0);
+})();
+</script>
+</body>
+</html>
